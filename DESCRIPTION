@@ -1,0 +1,12 @@
+Package: geoAPI
+Title: Geospatial Coordinate Classes from OGC
+Version: 0.0.0.9000
+Authors@R: 
+    person("Patrick", "Van Laake", , "patrick@vanlaake.net", role = c("aut", "cre"))
+Description: The Open Geospatial Consortium (OGC) has published a standard on "Referencing by Coordinates", comprising geospatial coordinate axes, coordinate systems and coordfinate reference systems, among others. This package implements the core functionality of OGC's reference Java geoAPI implementation of the standard in native R code.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports: 
+    R6
