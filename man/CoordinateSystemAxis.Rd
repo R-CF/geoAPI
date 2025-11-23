@@ -8,14 +8,36 @@
 This class implements the coordinate system axis class. The
 axis is always associated with a coordinate system.
 }
+\section{Super class}{
+\code{\link[geoAPI:IdentifiedObject]{geoAPI::IdentifiedObject}} -> \code{CoordinateSystemAxis}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-CoordinateSystemAxis-new}{\code{CoordinateSystemAxis$new()}}
 \item \href{#method-CoordinateSystemAxis-print}{\code{CoordinateSystemAxis$print()}}
+\item \href{#method-CoordinateSystemAxis-getAbbreviation}{\code{CoordinateSystemAxis$getAbbreviation()}}
+\item \href{#method-CoordinateSystemAxis-getDirection}{\code{CoordinateSystemAxis$getDirection()}}
+\item \href{#method-CoordinateSystemAxis-getUnit}{\code{CoordinateSystemAxis$getUnit()}}
+\item \href{#method-CoordinateSystemAxis-getMinimumValue}{\code{CoordinateSystemAxis$getMinimumValue()}}
+\item \href{#method-CoordinateSystemAxis-getMaximumValue}{\code{CoordinateSystemAxis$getMaximumValue()}}
+\item \href{#method-CoordinateSystemAxis-getRangeMeaning}{\code{CoordinateSystemAxis$getRangeMeaning()}}
 \item \href{#method-CoordinateSystemAxis-clone}{\code{CoordinateSystemAxis$clone()}}
 }
 }
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geoAPI" data-topic="IdentifiedObject" data-id="getAlias"><a href='../../geoAPI/html/IdentifiedObject.html#method-IdentifiedObject-getAlias'><code>geoAPI::IdentifiedObject$getAlias()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geoAPI" data-topic="IdentifiedObject" data-id="getIdentifiers"><a href='../../geoAPI/html/IdentifiedObject.html#method-IdentifiedObject-getIdentifiers'><code>geoAPI::IdentifiedObject$getIdentifiers()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geoAPI" data-topic="IdentifiedObject" data-id="getName"><a href='../../geoAPI/html/IdentifiedObject.html#method-IdentifiedObject-getName'><code>geoAPI::IdentifiedObject$getName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geoAPI" data-topic="IdentifiedObject" data-id="getRemarks"><a href='../../geoAPI/html/IdentifiedObject.html#method-IdentifiedObject-getRemarks'><code>geoAPI::IdentifiedObject$getRemarks()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geoAPI" data-topic="IdentifiedObject" data-id="setAlias"><a href='../../geoAPI/html/IdentifiedObject.html#method-IdentifiedObject-setAlias'><code>geoAPI::IdentifiedObject$setAlias()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geoAPI" data-topic="IdentifiedObject" data-id="setIdentifiers"><a href='../../geoAPI/html/IdentifiedObject.html#method-IdentifiedObject-setIdentifiers'><code>geoAPI::IdentifiedObject$setIdentifiers()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geoAPI" data-topic="IdentifiedObject" data-id="setRemarks"><a href='../../geoAPI/html/IdentifiedObject.html#method-IdentifiedObject-setRemarks'><code>geoAPI::IdentifiedObject$setRemarks()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-CoordinateSystemAxis-new"></a>}}
 \if{latex}{\out{\hypertarget{method-CoordinateSystemAxis-new}{}}}
@@ -28,13 +50,14 @@ Create a new axis instance for use in a coordinate system.
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{name}}{Name}
+\item{\code{name}}{Character string. Name of the axis.}
 
-\item{\code{abbreviation}}{Abbreviation}
+\item{\code{abbreviation}}{Character string. Abbreviation of the axis.}
 
-\item{\code{direction}}{Direction}
+\item{\code{direction}}{Character string. Direction of the axis. Must be one
+from a set of values.}
 
-\item{\code{unit}}{Unit}
+\item{\code{unit}}{Character string. Unit of measure of the axis.}
 }
 \if{html}{\out{</div>}}
 }
@@ -46,10 +69,106 @@ An instance of this class or an error.
 \if{html}{\out{<a id="method-CoordinateSystemAxis-print"></a>}}
 \if{latex}{\out{\hypertarget{method-CoordinateSystemAxis-print}{}}}
 \subsection{Method \code{print()}}{
+Print a summary of the coordinate system axis to the
+console.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{CoordinateSystemAxis$print(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Ignored.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Self, invisible.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-CoordinateSystemAxis-getAbbreviation"></a>}}
+\if{latex}{\out{\hypertarget{method-CoordinateSystemAxis-getAbbreviation}{}}}
+\subsection{Method \code{getAbbreviation()}}{
+Retrieve the abbreviation of the axis. This method is
+mandatory in the OGC standard.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{CoordinateSystemAxis$getAbbreviation()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+Character string with the abbreviation of the axis.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-CoordinateSystemAxis-getDirection"></a>}}
+\if{latex}{\out{\hypertarget{method-CoordinateSystemAxis-getDirection}{}}}
+\subsection{Method \code{getDirection()}}{
+Retrieve the direction of the axis. This method is
+mandatory in the OGC standard.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{CoordinateSystemAxis$getDirection()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+Character string with the direction of the axis.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-CoordinateSystemAxis-getUnit"></a>}}
+\if{latex}{\out{\hypertarget{method-CoordinateSystemAxis-getUnit}{}}}
+\subsection{Method \code{getUnit()}}{
+Retrieve the unit of measure of the axis. This method is
+mandatory in the OGC standard.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{CoordinateSystemAxis$getUnit()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+Character string with the unit of measure of the axis.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-CoordinateSystemAxis-getMinimumValue"></a>}}
+\if{latex}{\out{\hypertarget{method-CoordinateSystemAxis-getMinimumValue}{}}}
+\subsection{Method \code{getMinimumValue()}}{
+Retrieve the minimum coordinate value of this axis, in units
+of the unit of measure of the axis.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{CoordinateSystemAxis$getMinimumValue()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+Negative infinity.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-CoordinateSystemAxis-getMaximumValue"></a>}}
+\if{latex}{\out{\hypertarget{method-CoordinateSystemAxis-getMaximumValue}{}}}
+\subsection{Method \code{getMaximumValue()}}{
+Retrieve the maximum coordinate value of this axis, in units
+of the unit of measure of the axis.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{CoordinateSystemAxis$getMaximumValue()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+Positive infinity.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-CoordinateSystemAxis-getRangeMeaning"></a>}}
+\if{latex}{\out{\hypertarget{method-CoordinateSystemAxis-getRangeMeaning}{}}}
+\subsection{Method \code{getRangeMeaning()}}{
+Retrieve the minimum coordinate value of this axis, in units
+of the unit of measure of the axis.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{CoordinateSystemAxis$getRangeMeaning()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+The character string "EXACT".
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-CoordinateSystemAxis-clone"></a>}}
